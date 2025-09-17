@@ -21,8 +21,9 @@ $if(fontspec)$
 \setsansfont{DejaVu Sans}[
   RawFeature={fallback=NotoColorEmoji}
 ]
-\setmonofont{DejaVu Sans Mono}[
-  RawFeature={fallback=NotoColorEmoji}
+\setmainfont{DejaVu Serif}[
+  RawFeature={fallback=Noto Color Emoji}, 
+  Scale=1.0
 ]
 $endif$
 
