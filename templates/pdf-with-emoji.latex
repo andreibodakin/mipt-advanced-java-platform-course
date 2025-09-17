@@ -40,6 +40,9 @@ $endif$
 \definecolor{shadecolor}{RGB}{245,245,245}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em, frame=single, framesep=2mm, framerule=0.2pt}
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
