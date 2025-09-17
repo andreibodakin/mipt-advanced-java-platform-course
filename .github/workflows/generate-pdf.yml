@@ -42,3 +42,13 @@ jobs:
       with:
         name: course-pdf
         path: java-mipt-course.pdf
+
+    - name: Deploy PDF to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./
+        destination_dir: ./pdf
+        keep_files: true
+        commit_message: "feat: update PDF"
