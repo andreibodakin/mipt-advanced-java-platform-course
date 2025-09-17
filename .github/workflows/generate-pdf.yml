@@ -20,18 +20,18 @@ jobs:
     - name: Install pandoc and dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y pandoc texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+        sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
 
     - name: Generate PDF
       run: |
         # Создаём список файлов
-        pandoc \
+        xargs pandoc \
         lectures/lecture-01.md \
         lectures/lecture-02.md \
         -o java-mipt-course.pdf \
         --css=assets/style.css \
         --toc \
-        --pdf-engine=pdflatex
+        --pdf-engine=xelatex
 
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
