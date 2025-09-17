@@ -20,7 +20,12 @@ jobs:
     - name: Install pandoc and dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
+        sudo apt-get install -y \
+          pandoc \
+          texlive-xetex \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-latex-recommended
 
     - name: Install fonts with Cyrillic support
       run: |
