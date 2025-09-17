@@ -38,6 +38,7 @@ jobs:
         --css=assets/style.css \
         --toc \
         --pdf-engine=xelatex \
+        -V fontspec \ 
         lectures/lecture-01.md \
         lectures/lecture-02.md
 
