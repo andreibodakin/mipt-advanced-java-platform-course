@@ -22,16 +22,20 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
 
+    - name: Install fonts with Cyrillic support
+      run: |
+        sudo apt-get install -y fonts-dejavu fonts-liberation fonts-noto-cjk fonts-noto-core
+
     - name: Generate PDF
       run: |
-        # Создаём список файлов
-        xargs pandoc \
-        lectures/lecture-01.md \
-        lectures/lecture-02.md \
-        -o java-mipt-course.pdf \
+        xargs pandoc -o java-mipt-course.pdf \
         --css=assets/style.css \
         --toc \
-        --pdf-engine=xelatex
+        --pdf-engine=xelatex \
+        -V mainfont="DejaVu Serif" \
+        -V monofont="DejaVu Sans Mono" \
+        lectures/lecture-01.md \
+        lectures/lecture-02.md
 
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
