@@ -1,0 +1,21 @@
+% PREAMBLE CUSTOMIZATION FOR EMOJI FALLBACK
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}[
+  RawFeature={fallback=NotoColorEmoji},
+  Scale=1.0
+]
+\setsansfont{DejaVu Sans}[
+  RawFeature={fallback=NotoColorEmoji}
+]
+\setmonofont{DejaVu Sans Mono}[
+  RawFeature={fallback=NotoColorEmoji}
+]
+
+% Rest of default Pandoc template follows...
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+$body$
+\end{document}
