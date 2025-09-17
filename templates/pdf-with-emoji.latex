@@ -4,13 +4,16 @@ $else$
 \usepackage[T1]{fontenc}
 $endif$
 
-% Fix for \usepackage before \documentclass — MOVE fontspec setup AFTER \documentclass
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
-% Load fontspec AFTER \documentclass
+% =============================
+% ОСНОВНЫЕ ПАКЕТЫ ДЛЯ PANDOC → XELATEX
+% =============================
+
+% Шрифты и emoji
 $if(fontspec)$
 \usepackage{fontspec}
-\defaultfontfeatures{Scale=MatchLowercase} % or whatever you prefer
+\defaultfontfeatures{Scale=MatchLowercase}
 \setmainfont{DejaVu Serif}[
   RawFeature={fallback=NotoColorEmoji},
   Scale=1.0
@@ -23,40 +26,72 @@ $if(fontspec)$
 ]
 $endif$
 
+% Гиперссылки и закладки
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
-  filecolor=magenta,      
+  filecolor=magenta,
   urlcolor=cyan,
-  pdftitle={Java MIPT Course},
-  pdfauthor={andreibodakin},
-  pdfsubject={Java Programming},
-  pdfkeywords={java, mipt, lecture, course}
+  pdftitle={$if(title)$$title$$endif$},
+  pdfauthor={$if(author)$$author$$endif$},
+  pdfsubject={Java Programming Course},
+  pdfkeywords={java, mipt, lecture, course, конспект}
 }
+\usepackage{bookmark}
 
-\usepackage{xcolor}
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{245,245,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+% Геометрия и форматирование
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{indentfirst}
 
-\usepackage{fancyvrb}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em, frame=single, framesep=2mm, framerule=0.2pt}
-
+% Таблицы — ВСЁ, что может понадобиться
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{calc}
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
 
+% Блоки кода — совместимо с GitHub Actions
+\usepackage{xcolor}
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{245,245,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em}
+
+% Списки
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% Математика (на всякий случай)
+\usepackage{amsmath,amssymb,amsfonts}
+
+% Колонтитулы (опционально — раскомментируйте если нужно)
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{Продвинутая Java Платформа}
+% \lhead{МФТИ, Кафедра БИТ}
+% \rfoot{\thepage}
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+
+% =============================
+% PANDOC HEADER INCLUDES (если передаёте что-то через -V header-includes)
+% =============================
 $for(header-includes)$
 $header-includes$
 $endfor$
 
+% =============================
+% НАЧАЛО ДОКУМЕНТА
+% =============================
 \begin{document}
 
+% Титульная информация
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -94,6 +129,12 @@ $if(title)$
 \maketitle
 $endif$
 
+% Содержание
+$if(toc)$
+\tableofcontents
+$endif$
+
+% Основное содержимое
 $body$
 
 \end{document}
