@@ -23,6 +23,18 @@ $if(fontspec)$
 ]
 $endif$
 
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan,
+  pdftitle={Java MIPT Course},
+  pdfauthor={andreibodakin},
+  pdfsubject={Java Programming},
+  pdfkeywords={java, mipt, lecture, course}
+}
+
 $for(header-includes)$
 $header-includes$
 $endfor$
