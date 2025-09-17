@@ -35,10 +35,10 @@ $endif$
   pdfkeywords={java, mipt, lecture, course}
 }
 
-\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,breaksymbol=,breaksymbolleft=,commandchars=\\\{\}}
 \usepackage{xcolor}
-\definecolor{shadecolor}{RGB}{245,245,245} % светло-серый фон
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{245,245,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
