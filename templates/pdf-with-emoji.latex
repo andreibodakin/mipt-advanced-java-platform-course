@@ -1,5 +1,16 @@
-% PREAMBLE CUSTOMIZATION FOR EMOJI FALLBACK
+% Options for packages loaded elsewhere
+$if(fontspec)$
+$else$
+\usepackage[T1]{fontenc}
+$endif$
+
+% Fix for \usepackage before \documentclass — MOVE fontspec setup AFTER \documentclass
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+% Load fontspec AFTER \documentclass
+$if(fontspec)$
 \usepackage{fontspec}
+\defaultfontfeatures{Scale=MatchLowercase} % or whatever you prefer
 \setmainfont{DejaVu Serif}[
   RawFeature={fallback=NotoColorEmoji},
   Scale=1.0
@@ -10,12 +21,51 @@
 \setmonofont{DejaVu Sans Mono}[
   RawFeature={fallback=NotoColorEmoji}
 ]
+$endif$
 
-% Rest of default Pandoc template follows...
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 \begin{document}
+
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+
+$if(subtitle)$
+$if(beamer)$
+\subtitle{$subtitle$}
+$else$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{%
+  \apptocmd{\@title}{\par\large #1}{}{}
+}
+\makeatother
+\subtitle{$subtitle$}
+$endif$
+$endif$
+
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+$if(beamer)$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+$if(titlegraphic)$
+\titlegraphic{\includegraphics{$titlegraphic$}}
+$endif$
+$if(logo)$
+\logo{\includegraphics{$logo$}}
+$endif$
+$endif$
+
+$if(title)$
+\maketitle
+$endif$
+
 $body$
+
 \end{document}
