@@ -26,7 +26,8 @@ jobs:
           texlive-fonts-recommended \
           texlive-fonts-extra \
           texlive-latex-recommended \
-          texlive-latex-extra
+          texlive-latex-extra \
+          fonts-noto-color-emoji
 
     - name: Install fonts with Cyrillic support
       run: |
@@ -45,6 +46,8 @@ jobs:
         --toc \
         --pdf-engine=xelatex \
         -V fontspec \
+        --wrap=auto \
+        --columns=80 \
         $(ls lectures/lecture-*.md | sort)
 
     - name: Upload PDF as artifact
