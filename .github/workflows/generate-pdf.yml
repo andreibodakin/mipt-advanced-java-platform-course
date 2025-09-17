@@ -25,11 +25,13 @@ jobs:
     - name: Generate PDF
       run: |
         # Создаём список файлов
-        echo "lectures/lecture-01.md" > book.txt
-        echo "lectures/lecture-02.md" >> book.txt
-        # Добавь остальные лекции по мере появления
-
-        pandoc --file-list book.txt -o java-mipt-course.pdf --toc --highlight-style tango
+        pandoc \
+        lectures/lecture-01.md \
+        lectures/lecture-02.md \
+        -o java-mipt-course.pdf \
+        --css=assets/style.css \
+        --toc \
+        --pdf-engine=pdflatex
 
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
