@@ -43,6 +43,8 @@ $endif$
 \usepackage{fancyvrb}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em, frame=single, framesep=2mm, framerule=0.2pt}
 
+\usepackage{longtable}
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
