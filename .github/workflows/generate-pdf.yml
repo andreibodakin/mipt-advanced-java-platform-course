@@ -1,0 +1,38 @@
+name: Generate PDF from Markdown
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # позволяет запускать вручную
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install pandoc and dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+    - name: Generate PDF
+      run: |
+        # Создаём список файлов
+        echo "lectures/lecture-01.md" > book.txt
+        echo "lectures/lecture-02.md" >> book.txt
+        # Добавь остальные лекции по мере появления
+
+        pandoc --file-list book.txt -o java-mipt-course.pdf --toc --highlight-style tango
+
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: course-pdf
+        path: java-mipt-course.pdf
