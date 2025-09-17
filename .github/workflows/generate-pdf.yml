@@ -33,14 +33,13 @@ jobs:
 
     - name: Generate PDF
       run: |
-        xargs pandoc -o java-mipt-course.pdf \
+        pandoc -o java-mipt-course.pdf \
         --template=templates/pdf-with-emoji.latex \
         --css=assets/style.css \
         --toc \
         --pdf-engine=xelatex \
-        -V fontspec \ 
-        lectures/lecture-01.md \
-        lectures/lecture-02.md
+        -V fontspec \
+        $(ls lectures/lecture-*.md | sort)
 
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
