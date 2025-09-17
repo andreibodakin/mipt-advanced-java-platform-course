@@ -211,4 +211,5 @@ while (condition) {
 - [Скачать IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/)
 - [OpenJDK (Adoptium)](https://adoptium.net/)
 - [Горячие клавиши IntelliJ IDEA (официальная шпаргалка)](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+- [Теория по Java](https://metanit.com/java/tutorial/)
 ```
