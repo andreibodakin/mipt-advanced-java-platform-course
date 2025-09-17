@@ -46,6 +46,7 @@ $endif$
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{calc}
+\usepackage{booktabs}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
