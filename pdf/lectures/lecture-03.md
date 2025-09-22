@@ -13,36 +13,32 @@ package java.util;
 
 Collection.java
 
-// The root interface in the collection hierarchy.
-
 public interface Collection<E> extends Iterable<E>
 
+### `Iterable` → `Collection<E>`
 
-Iterable
-└── Collection<E>
-├── List<E>
-│   ├── ArrayList
-│   └── LinkedList
-│
-├── Set<E>
-│   ├── HashSet
-│   ├── LinkedHashSet
-│   └── SortedSet<E>
-│       └── TreeSet
-│
-└── Queue<E>
-├── PriorityQueue
-└── Deque<E>
-└── ArrayDeque
+- `List<E>`
+    - `ArrayList`
+    - `LinkedList`
+- `Set<E>`
+    - `HashSet`
+    - `LinkedHashSet`
+    - `SortedSet<E>`
+        - `TreeSet`
+- `Queue<E>`
+    - `PriorityQueue`
+    - `Deque<E>`
+        - `ArrayDeque`
 
-❗ Map<K,V> не наследуется от Collection, но входит в Collections Framework.
+> ❗ `Map<K,V>` **не наследуется** от `Collection`, но входит в Collections Framework.
 
-Map<K,V>
-├── SortedMap<K,V>
-│   └── TreeMap
-├── HashMap
-└── ConcurrentMap<K,V>
-└── ConcurrentHashMap
+### `Map<K,V>`
+
+- `SortedMap<K,V>`
+    - `TreeMap`
+- `HashMap`
+- `ConcurrentMap<K,V>`
+    - `ConcurrentHashMap`
 
 ## 📦 ArrayList — массив с динамическим ростом
 
