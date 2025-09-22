@@ -1,56 +1,16 @@
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Logs and databases
-*.log
-*.sqlite
-logs/
-temp/
-tmp/
-
-# Editor and IDE
-.vscode/
+# IntelliJ IDEA
 .idea/
-*.swp
-*.swo
-*~
-*.sublime-project
-*.sublime-workspace
 *.iml
-*.ipr
 *.iws
+*.ipr
 
-# Build and package directories
-/target/
-/out/
-/build/
-/dist/
-/bin/
-*.class
-*.jar
-*.war
-*.exe
+# Maven
+target/
 
-# Environment and secrets
-.env
-*.env
-secrets.yaml
-config.local
+# Gradle
+.gradle/
+build/
 
-# Markdown editors and backup files
-*.bak
+# Logs and temp files
+*.log
 *.tmp
-~$*
-
-# GitHub Pages specific (optional)
-_site/
-.jekyll-cache/
-.jekyll-metadata
