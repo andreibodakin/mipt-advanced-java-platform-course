@@ -20,27 +20,29 @@ public interface Collection<E> extends Iterable<E>
 
 Iterable
 └── Collection<E>
-    ├── List<E>
-    │ ├── **ArrayList**
-    │ ├── **LinkedList**
-    ├── Set<E>
-    │ ├── **HashSet**
-    │ └── **LinkedHashSet**
-    │ └── SortedSet<E>
-    │   └── **TreeSet**
-    └── Queue<E>
-        ├── **PriorityQueue**
-        └── Deque<E>
-            └── **ArrayDeque**
+├── List<E>
+│   ├── ArrayList
+│   └── LinkedList
+│
+├── Set<E>
+│   ├── HashSet
+│   ├── LinkedHashSet
+│   └── SortedSet<E>
+│       └── TreeSet
+│
+└── Queue<E>
+├── PriorityQueue
+└── Deque<E>
+└── ArrayDeque
 
 ❗ Map<K,V> не наследуется от Collection, но входит в Collections Framework.
 
 Map<K,V>
-    ├── SortedMap<K,V>
-    │ └── **TreeMap**
-    ├── **HashMap**
-    └── ConcurrentMap<K,V>
-      └── **ConcurrentHashMap**
+├── SortedMap<K,V>
+│   └── TreeMap
+├── HashMap
+└── ConcurrentMap<K,V>
+└── ConcurrentHashMap
 
 ## 📦 ArrayList — массив с динамическим ростом
 
@@ -154,23 +156,25 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
 ## 💡 Практические советы на собеседовании
 
-Почему ArrayList чаще LinkedList?
-→ Локальность данных, меньше аллокаций, быстрее в реальных сценариях.
+Почему ArrayList чаще LinkedList?  
+→ Локальность данных, меньше аллокаций, быстрее в реальных сценариях.  
 
-Что будет, если не переопределить hashCode() и equals() для ключа в HashMap?
-→ Объекты не будут находиться → нарушение контракта.
+Что будет, если не переопределить hashCode() и equals() для ключа в HashMap?  
+→ Объекты не будут находиться → нарушение контракта.  
 
-Как работает ConcurrentHashMap?
-→ Разделён на сегменты (до Java 8) → с Java 8 — использует CAS + synchronized на уровне корзины → высокая конкурентность.
-Fail-Fast vs Fail-Safe?
-→ ArrayList.iterator() — fail-fast → ConcurrentModificationException
-→ ConcurrentHashMap.keySet().iterator() — fail-safe → работает с копией
+Как работает ConcurrentHashMap?  
+→ Разделён на сегменты (до Java 8) → с Java 8 — использует CAS + synchronized на уровне корзины → высокая конкурентность.  
+Fail-Fast vs Fail-Safe?  
+→ ArrayList.iterator() — fail-fast → ConcurrentModificationException  
+→ ConcurrentHashMap.keySet().iterator() — fail-safe → работает с копией  
 
-Как уменьшить capacity ArrayList?
-→ trimToSize()
+Как уменьшить capacity ArrayList?  
+→ trimToSize()  
 
 ## 📚 Рекомендуем к прочтению
 
 📖 Effective Java — Joshua Bloch (главы 3, 6 — коллекции и equals/hashCode)
+
 📖 Java Concurrency in Practice — Brian Goetz (глава 5 — коллекции в многопоточке)
+
 🌐 [Oracle Java Collections Tutorial](https://docs.oracle.com/javase/tutorial/collections/?spm=a2ty_o01.29997173.0.0.1b35c921FmKv3G)
