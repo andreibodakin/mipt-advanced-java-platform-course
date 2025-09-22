@@ -1,16 +1,56 @@
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Maven
-target/
-
-# Gradle
-.gradle/
-build/
-
-# Logs and temp files
+# Logs and databases
 *.log
+*.sqlite
+logs/
+temp/
+tmp/
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+*.iml
+*.ipr
+*.iws
+
+# Build and package directories
+/target/
+/out/
+/build/
+/dist/
+/bin/
+*.class
+*.jar
+*.war
+*.exe
+
+# Environment and secrets
+.env
+*.env
+secrets.yaml
+config.local
+
+# Markdown editors and backup files
+*.bak
 *.tmp
+~$*
+
+# GitHub Pages specific (optional)
+_site/
+.jekyll-cache/
+.jekyll-metadata
