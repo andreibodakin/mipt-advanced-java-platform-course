@@ -51,7 +51,6 @@ jobs:
         pandoc -o java-mipt-course.pdf \
         --template=templates/pdf-with-emoji.latex \
         --css=assets/style.css \
-        --toc \
         --pdf-engine=xelatex \
         -V fontspec \
         --wrap=auto \
