@@ -10,20 +10,23 @@ $endif$
 % ОСНОВНЫЕ ПАКЕТЫ ДЛЯ PANDOC → XELATEX
 % =============================
 
-% Шрифты и emoji
+% Шрифты и emoji — УЛУЧШЕННАЯ ВЕРСИЯ
 $if(fontspec)$
 \usepackage{fontspec}
 \defaultfontfeatures{Scale=MatchLowercase}
+
+% Основной шрифт с fallback на Noto Color Emoji
 \setmainfont{DejaVu Serif}[
-  RawFeature={fallback=NotoColorEmoji},
-  Scale=1.0
+  RawFeature={fallback=NotoColorEmoji}
 ]
+
 \setsansfont{DejaVu Sans}[
   RawFeature={fallback=NotoColorEmoji}
 ]
-\setmainfont{DejaVu Serif}[
-  RawFeature={fallback=Noto Color Emoji}, 
-  Scale=1.0
+
+% Для моноширинного — тоже с поддержкой emoji
+\setmonofont{DejaVu Sans Mono}[
+  RawFeature={fallback=NotoColorEmoji}
 ]
 $endif$
 
