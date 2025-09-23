@@ -41,6 +41,11 @@ $endif$
 }
 \usepackage{bookmark}
 
+% Поддержка изображений
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+
 % Геометрия и форматирование
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{setspace}
