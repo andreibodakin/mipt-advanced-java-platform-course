@@ -46,6 +46,14 @@ jobs:
         fonts-noto-core \
         fonts-noto-color-emoji
 
+    - name: Fix image paths for PDF
+      run: |
+        find lectures -name "*.md" -exec sed -i 's|\.\./images/|images/|g' {} +
+
+    - name: Copy images to lectures folder for Pandoc
+      run: |
+        cp -r images lectures/
+
     - name: Generate PDF
       run: |
         pandoc -o java-mipt-course.pdf \
@@ -55,7 +63,7 @@ jobs:
         -V fontspec \
         --wrap=auto \
         --columns=80 \
-        --resource-path=.:images:images \
+        --resource-path=.:images:lectures/images \
         README.md \
         $(ls lectures/lecture-*.md | sort)
 
