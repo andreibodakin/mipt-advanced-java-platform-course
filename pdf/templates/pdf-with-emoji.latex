@@ -45,8 +45,6 @@ $endif$
 
 % Поддержка изображений
 \usepackage{graphicx}
-\usepackage{etoolbox}
-\AtBeginEnvironment{figure}{\setkeys{Gin}{width=0.8\textwidth}}
 \usepackage{float}
 \usepackage{caption}
 
