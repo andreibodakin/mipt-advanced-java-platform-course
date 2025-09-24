@@ -47,8 +47,11 @@ $endif$
 \usepackage{graphicx}
 \usepackage{etoolbox}
 \AtBeginEnvironment{figure}{\setkeys{Gin}{width=0.8\textwidth}}
+% Отключить плавающие фигуры — вставлять изображения строго в месте вызова
 \usepackage{float}
-\usepackage{caption}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][]{\origfigure[H]}{\endorigfigure}
 
 % Геометрия и форматирование
 \usepackage[margin=2.5cm]{geometry}
