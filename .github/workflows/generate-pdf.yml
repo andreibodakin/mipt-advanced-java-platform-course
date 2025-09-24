@@ -56,9 +56,9 @@ jobs:
         | sed 's/.*"name": "\(.*\)".*/\1/' \
         | xargs -I {} curl -L -o images/{} "https://github.com/andreibodakin/mipt-advanced-java-platform-course/raw/main/images/{}"
 
-    - name: Debug list of downloaded images
+    - name: Fix image paths for PDF
       run: |
-        ls -la images/
+        find lectures -name "*.md" -exec sed -i 's|\.\./images/|images/|g' {} +
 
     - name: Generate PDF
       run: |
