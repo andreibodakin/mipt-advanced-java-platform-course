@@ -31,10 +31,6 @@ jobs:
           texlive-latex-recommended \
           texlive-latex-extra
 
-    - name: Install Noto fonts
-      run: |
-        sudo apt-get install -y fonts-noto-serif fonts-noto-color-emoji
-
     - name: Install fonts with Emoji support
       run: |
         sudo apt-get install -y fonts-noto-color-emoji
