@@ -104,7 +104,7 @@ $endif$
 \newcommand{\CommentTok}[1]{\textcolor[RGB]{128,128,128}{\textit{#1}}}    % Комментарии
 \newcommand{\KeywordTok}[1]{\textcolor[RGB]{0,0,255}{\textbf{#1}}}        % Ключевые слова
 \newcommand{\NormalTok}[1]{#1}                                            % Обычный текст
-\newcommand{\VariableTok}[1]{\textcolor[RGB]{0,0,0}{#1}}                  % Переменные: $PATH, $HOME
+\newcommand{\VariableTok}[1]{\textcolor[RGB]{0,0,0}{#1}}                  % Переменные: PATH, HOME
 \newcommand{\OperatorTok}[1]{\textcolor[RGB]{181,46,32}{#1}}             % Операторы: =, |, >, &
 \newcommand{\FunctionTok}[1]{\textcolor[RGB]{0,0,255}{#1}}               % Функции
 \newcommand{\ControlFlowTok}[1]{\textcolor[RGB]{0,0,255}{\textbf{#1}}}   % if, for, while
