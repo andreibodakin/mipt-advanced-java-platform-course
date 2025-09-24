@@ -15,7 +15,7 @@ Collection.java
 
 public interface Collection<E> extends Iterable<E>
 
-<img src="../images/collection-interfaces.png" width="80%" />
+<img src="images/collection-interfaces.png" width="80%" />
 
 ### `Iterable` → `Collection<E>`
 
