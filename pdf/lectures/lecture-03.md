@@ -19,6 +19,8 @@ public interface Collection<E> extends Iterable<E>
 
 ![Схема интерфейсов коллекций](images/collection-interfaces.png)
 
+![Схема интерфейсов коллекций](images/collection-interfaces.png){ width=80% }
+
 ### `Iterable` → `Collection<E>`
 
 - `List<E>`
