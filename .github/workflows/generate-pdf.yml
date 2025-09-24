@@ -61,6 +61,10 @@ jobs:
         echo "=== Lectures/images ==="
         ls -la lectures/images/
 
+    - name: Debug show image path in lecture
+      run: |
+        grep -A2 -B2 "collection-interfaces" lectures/lecture-03.md
+
     - name: Generate PDF
       run: |
         pandoc -o java-mipt-course.pdf \
