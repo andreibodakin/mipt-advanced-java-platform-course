@@ -77,7 +77,7 @@ jobs:
         -V fontspec \
         --wrap=auto \
         --columns=80 \
-        --resource-path=.:images \
+        --resource-path=.:images:lectures/images \
         README.md \
         $(ls lectures/lecture-*.md | sort)
 
