@@ -15,34 +15,16 @@ $if(fontspec)$
 \usepackage{fontspec}
 \defaultfontfeatures{Scale=MatchLowercase}
 
-% Основной шрифт — указываем полный путь
+% Основной шрифт
 \setmainfont{DejaVu Serif}[
-  Path = /usr/share/fonts/truetype/dejavu/,
-  Extension = .ttf,
-  UprightFont = *,
-  BoldFont = *-Bold,
-  ItalicFont = *-Oblique,
-  BoldItalicFont = *-BoldOblique,
   RawFeature={fallback=NotoColorEmoji}
 ]
 
 \setsansfont{DejaVu Sans}[
-  Path = /usr/share/fonts/truetype/dejavu/,
-  Extension = .ttf,
-  UprightFont = *,
-  BoldFont = *-Bold,
-  ItalicFont = *-Oblique,
-  BoldItalicFont = *-BoldOblique,
   RawFeature={fallback=NotoColorEmoji}
 ]
 
 \setmonofont{DejaVu Sans Mono}[
-  Path = /usr/share/fonts/truetype/dejavu/,
-  Extension = .ttf,
-  UprightFont = *,
-  BoldFont = *-Bold,
-  ItalicFont = *-Oblique,
-  BoldItalicFont = *-BoldOblique,
   RawFeature={fallback=NotoColorEmoji}
 ]
 $endif$
