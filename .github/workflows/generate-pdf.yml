@@ -54,6 +54,13 @@ jobs:
       run: |
         cp -r images lectures/
 
+    - name: Debug check images
+      run: |
+        echo "=== Root images ==="
+        ls -la images/
+        echo "=== Lectures/images ==="
+        ls -la lectures/images/
+
     - name: Generate PDF
       run: |
         pandoc -o java-mipt-course.pdf \
