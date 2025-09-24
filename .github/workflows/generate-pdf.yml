@@ -46,15 +46,16 @@ jobs:
         fonts-noto-core \
         fonts-noto-color-emoji
 
-    - name: Download all images for PDF
+    - name: Download images for PDF
       run: |
         mkdir -p images
-        # Скачиваем все PNG/JPG из папки images репозитория
-        curl -s https://api.github.com/repos/andreibodakin/mipt-advanced-java-platform-course/contents/images \
-        | grep '"name":' \
-        | grep -E '\.(png|jpg|jpeg|gif)$' \
-        | sed 's/.*"name": "\(.*\)".*/\1/' \
-        | xargs -I {} curl -L -o images/{} "https://github.com/andreibodakin/mipt-advanced-java-platform-course/raw/main/images/{}"
+        curl -L -o images/collection-interfaces.png \
+          https://github.com/andreibodakin/mipt-advanced-java-platform-course/raw/main/images/collection-interfaces.png
+        # Добавь другие картинки по мере появления:
+        # curl -L -o images/hashmap-structure.png https://.../hashmap-structure.png
+
+    - name: Debug list images
+      run: ls -la images/
 
     - name: Fix image paths for PDF
       run: |
