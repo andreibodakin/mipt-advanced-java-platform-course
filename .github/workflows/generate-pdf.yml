@@ -46,24 +46,9 @@ jobs:
         fonts-noto-core \
         fonts-noto-color-emoji
 
-    - name: Download images for PDF
-      run: |
-        mkdir -p images
-        curl -L -o images/collection-interfaces.png \
-          https://github.com/andreibodakin/mipt-advanced-java-platform-course/raw/main/images/collection-interfaces.png
-        # Добавь другие картинки по мере появления:
-        # curl -L -o images/hashmap-structure.png https://.../hashmap-structure.png
-
-    - name: Debug list images
-      run: ls -la images/
-
     - name: Fix image paths for PDF
       run: |
         find lectures -name "*.md" -exec sed -i 's|\.\./images/|images/|g' {} +
-
-    - name: Debug show first lines of a lecture file
-      run: |
-        head -n 20 lectures/lecture-03.md
 
     - name: Copy images to lectures folder for Pandoc
       run: |
