@@ -71,6 +71,22 @@ $endif$
 \usepackage{fancyvrb}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em}
 
+% Стили подсветки синтаксиса для кода (bash, java и др.)
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small, xleftmargin=2em, breaklines, commandchars=\\\{\}}
+
+% Цвета для токенов (можно настроить)
+\newcommand{\ExtensionTok}[1]{\textcolor[RGB]{45,136,219}{\textbf{#1}}}    % Команды: java, javac
+\newcommand{\AttributeTok}[1]{\textcolor[RGB]{181,46,32}{#1}}             % Атрибуты/флаги: -version
+\newcommand{\DataTypeTok}[1]{\textcolor[RGB]{0,128,0}{#1}}                % Типы данных
+\newcommand{\DecValTok}[1]{\textcolor[RGB]{0,0,255}{#1}}                  % Числа
+\newcommand{\BaseNTok}[1]{\textcolor[RGB]{0,0,255}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[RGB]{128,0,0}{#1}}                    % Строки
+\newcommand{\StringTok}[1]{\textcolor[RGB]{128,0,0}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[RGB]{128,128,128}{\textit{#1}}}    % Комментарии
+\newcommand{\KeywordTok}[1]{\textcolor[RGB]{0,0,255}{\textbf{#1}}}        % Ключевые слова
+\newcommand{\NormalTok}[1]{#1}                                            % Обычный текст
+
 % Списки
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
