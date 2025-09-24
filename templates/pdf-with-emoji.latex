@@ -16,7 +16,7 @@ $if(fontspec)$
 \defaultfontfeatures{Scale=MatchLowercase}
 
 % Основной шрифт
-\setmainfont{DejaVu Serif}[
+\setmainfont{Noto Serif}[
   RawFeature={fallback=NotoColorEmoji}
 ]
 
