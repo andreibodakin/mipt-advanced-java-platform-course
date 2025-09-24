@@ -60,6 +60,14 @@ jobs:
       run: |
         find lectures -name "*.md" -exec sed -i 's|\.\./images/|images/|g' {} +
 
+    - name: Debug show first lines of a lecture file
+      run: |
+        head -n 20 lectures/lecture-03.md
+
+    - name: Copy images to lectures folder for Pandoc
+      run: |
+        cp -r images lectures/
+
     - name: Generate PDF
       run: |
         pandoc -o java-mipt-course.pdf \
